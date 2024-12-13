@@ -29,7 +29,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: url('https://cdn.jsdelivr.net/gh/dujuke/GINGGUI@main/background-image.png') no-repeat center center fixed;
+            background: url('https://cdn.jsdelivr.net/gh/dujuke/GINGGUI@main/background-image.webp') no-repeat center center fixed;
             background-size: cover;
             color: var(--font-color);
             display: flex;
@@ -314,7 +314,11 @@
 </head>
 <body>
     <header>
-        <img src="https://cdn.jsdelivr.net/gh/dujuke/GINGGUI@main/logo.png" alt="Guizhou Jinggui Energy Company Logo">
+        <picture>
+            <source srcset="https://cdn.jsdelivr.net/gh/dujuke/GINGGUI@main/logo.webp" type="image/webp">
+            <source srcset="https://cdn.jsdelivr.net/gh/dujuke/GINGGUI@main/logo.jpg" type="image/jpeg">
+            <img src="https://cdn.jsdelivr.net/gh/dujuke/GINGGUI@main/logo.jpg" alt="Guizhou Jinggui Energy Company Logo">
+        </picture>
         <nav>
             <a href="#" class="company-intro">公司简介</a>
             <div class="hover-info">
