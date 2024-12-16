@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公告条目</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fb;
+        }
+        header {
+            background-color: #2d4e91;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #eeeeee;
+        }
+        .main-header h2 {
+            margin: 0;
+            color: #2d4e91;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button.write {
+            background-color: #f38e95;
+            color: white;
+        }
+        .button.query {
+            background-color: #fbb747;
+            color: white;
+        }
+        .content {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        .left, .right {
+            flex: 1;
+        }
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .table th, .table td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .pagination {
+            text-align: center;
+            padding: 10px;
+        }
+        .pagination a {
+            margin: 0 5px;
+            padding: 5px 10px;
+            color: white;
+            background-color: #2d4e91;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .pagination a.active {
+            background-color: #4CAF50;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2d4e91;
+            color: white;
+        }
+    </style>
+    <script>
+        function showDirectory(page) {
+            const content1 = `
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th>日期</th>
+                            <th>浏览量</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">关于公司年会排练通知</a></td>
+                            <td>2024-12-05</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">运营部加入两名新同事</a></td>
+                            <td>2024-10-31</td>
+                            <td>106</td>
+                        </tr>
+                    </tbody>
+                </table>`;
+
+            const content2 = `
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th>日期</th>
+                            <th>浏览量</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">早餐安排</a></td>
+                            <td>2024-12-05</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">中餐安排</a></td>
+                            <td>2024-12-05</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">晚餐安排</a></td>
+                            <td>2024-12-05</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">工作日安排</a></td>
+                            <td>2024-12-05</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">周末安排</a></td>
+                            <td>2024-12-05</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">时间安排</a></td>
+                            <td>2024-12-05</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">人员安排</a></td>
+                            <td>2024-12-05</td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">地点安排</a></td>
+                            <td>2024-12-05</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>`;
+
+            const leftContent = document.querySelector('.left');
+            const paginationLinks = document.querySelectorAll('.pagination a');
+
+            // Update the content based on the page number
+            if (page === 1) {
+                leftContent.innerHTML = content1;
+            } else if (page === 2) {
+                leftContent.innerHTML = content2;
+            }
+
+            // Update active state for pagination
+            paginationLinks.forEach(link => link.classList.remove('active'));
+            paginationLinks[page - 1].classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize with page 1 content
+            showDirectory(1);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>贵州京贵能源有限公司 | 公告公示</h1>
+    </header>
+    <div class="container">
+        <div class="main-header">
+            <h2>公告公示</h2>
+            <div class="buttons">
+                <button class="button write">发布公告</button>
+                <button class="button query" onclick="showDirectory(2)">发布公示</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left"></div>
+        </div>
+        <div class="pagination">
+            <a href="#" onclick="showDirectory(1)" class="active">1</a>
+            <a href="#" onclick="showDirectory(2)">2</a>
+        </div>
+    </div>
+</body>
+</html>
