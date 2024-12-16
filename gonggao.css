@@ -25,6 +25,19 @@ header h1 {
     font-size: 24px;
 }
 
+.home-button {
+    text-decoration: none; /* 去掉下划线 */
+    color: var(--text-color); /* 使用主题颜色 */
+    background-color: var(--primary-color); /* 背景颜色 */
+    padding: 5px 10px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    transition: background-color 0.3s; /* 鼠标悬停动画 */
+}
+
+.home-button:hover {
+    background-color: #1e386b; /* 鼠标悬停时的颜色 */
+}
+
 .container {
     max-width: 1200px;
     margin: 20px auto;
