@@ -52,7 +52,7 @@ header picture::before {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
     height: 40%; /* 遮罩高度 */
     background: rgba(255, 255, 255, 0.4); /* 半透明白色遮罩 */
     z-index: 1;
